@@ -26,13 +26,10 @@ func GetBotInfo(username string) (BotInfo, error) {
 
 	apiResponse, err := callAPI("getBotID.php?username=" + url.QueryEscape(username))
 
-	println(string(apiResponse))
-
 	var response getBotResponseStruct
 	err = jsoniter.ConfigCompatibleWithStandardLibrary.Unmarshal(apiResponse, &response)
 
 	if err != nil {
-		println("aeaeu")
 		return BotInfo{}, errors.New(InvalidResponse)
 	}
 
