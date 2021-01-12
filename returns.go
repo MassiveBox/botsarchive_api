@@ -2,6 +2,7 @@ package baapi
 
 import (
 	"errors"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -19,7 +20,7 @@ func populateBotInfoReturnStruct(response getBotResponseStruct) (BotInfo, error)
 	}
 
 	if result.DeveloperID != "0" {
-		devid, err := strconv.Atoi(result.DeveloperID)
+		devid, err := strconv.Atoi(fmt.Sprintf("%v", result.DeveloperID))
 		if err != nil {
 			return ret, errors.New(UnexpectedError)
 		}

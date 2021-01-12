@@ -14,7 +14,7 @@ type getBotResponseStruct struct {
 		Category    interface{} `json:"category"`
 		Groups      int         `json:"groups"`
 		Inline      int         `json:"inline"`
-		DeveloperID string      `json:"developer_id"`
+		DeveloperID interface{} `json:"developer_id"`
 		Stars       int         `json:"stars"`
 		Votes       int         `json:"votes"`
 		Vote        float64     `json:"vote"`
